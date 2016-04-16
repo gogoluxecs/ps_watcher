@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+  provider: parallels
+  box: parallels/debian-8.3
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: true
+
+platforms:
+- name: debian-8.3
+
+suites:
+- name: default
+  run_list:
+  - recipe[ps_watcher:default]
